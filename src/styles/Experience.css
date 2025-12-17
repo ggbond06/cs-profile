@@ -1,0 +1,130 @@
+.experience-box {
+    background: #1e1e1e; /* dark box */
+    color: #fff; /* white text inside */
+    max-width: 900px; /* reasonable max width */
+    width: 100%;
+    margin: 0 auto; /* center horizontally */
+    padding: 18px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(240, 248, 255, 0.596);
+}
+
+.experience-section {
+    display: flex;
+    flex-direction: column; /* stack header and vertical line */
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.education-section h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.resume-icon-box {
+    background: #2f2f2f; 
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),   
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);  
+    backdrop-filter: blur(4px);  
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vertical-line {
+    width: 2px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.305);
+    margin-left: 22px;
+    margin-top: -10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #FFD86B;
+    border-radius: 50%;
+}
+
+.dot-back2 {
+    width: 15px;
+    height: 15px;
+    background: #2f2f2f;
+    border-radius: 50%;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),   
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);  
+    backdrop-filter: blur(4px);  
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 10px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: left;
+  flex-direction: column;       
+  margin-left: 60px; 
+  margin-top: -44px;
+}
+
+.internship {
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.degree {
+    margin-bottom: 0px;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.695);
+}
+
+.duration {
+    color: #FFD86B;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+.location {
+    color: rgba(255, 255, 255, 0.695);
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.description {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+}
+
+.vertical-line2 {
+    width: 2px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.305);
+    margin-left: 22px;
+    margin-top: -50px;
+}
+
+.high-school-timeline-item {
+    display: flex;
+    align-items: left;
+    flex-direction: column;       
+    margin-left: 60px; 
+    margin-top: -43px;
+}

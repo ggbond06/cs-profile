@@ -1,0 +1,27 @@
+body{
+  background-color: #161616;
+}
+
+#body{
+  min-height: 100vh;
+  background: linear-gradient(
+    var(--angle, 135deg),
+    #d8ffeb,
+    #b2f2dd,
+    #8ae5cf,
+    #63d9c0,
+    #3bc2b0,
+    #1e8f99,
+    #0d5f73
+  );
+  background-size: 400% 400%;
+  animation: grdientMove 12s ease infinite;
+}
+
+.page {
+  padding-top: 120px;
+  padding-left: 5%;
+  padding-right: 5%;
+  min-height: calc(100vh - 120px);
+}
+

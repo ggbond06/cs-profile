@@ -1,0 +1,11 @@
+.courses-box {
+    background: #1e1e1e;
+    color: white;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 18px 20px;
+    border: 1px solid rgba(240, 248, 255, 0.596);
+}
+

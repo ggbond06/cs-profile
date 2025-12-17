@@ -1,0 +1,68 @@
+#header{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  height: 70px;
+  width: 90%;
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 0 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  animation: float 4s ease-in-out infinite;
+  transition: backdrop-filter 0.3s ease, background-color 0.3s ease;
+}
+
+#header.scrolled {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#name{
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  font-weight: 550;
+  color: var(--button-color, black);
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+#name:hover {
+  opacity: 0.8;
+}
+
+
+#menu_buttons{
+  display: flex;
+  gap: 20px;
+}
+
+#menu_buttons button{
+  border: none;
+  color: var(--button-color, black);
+  background-color: transparent;
+  font-size: 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 20px, 30px;
+  position: relative;
+}
+
+#menu_buttons button:hover {
+  opacity: 0.8;
+}
+

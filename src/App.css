@@ -1,0 +1,11 @@
+/* Import all CSS modules */
+@import './styles/Animations.css';
+@import './styles/Layout.css';
+@import './styles/Header.css';
+@import './styles/Home.css';
+@import './styles/Footer.css';
+@import './styles/Resume.css';
+@import './styles/Experience.css';
+@import './styles/Bio.css';
+@import './styles/Courses.css';
+
