@@ -1,0 +1,270 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  font-weight: normal;
+  text-align: left;
+}
+
+.home-page p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+}
+
+.home-page > h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.home-content-wrapper {
+  display: grid;
+  grid-template-columns: clamp(240px, 24vw, 300px) minmax(0, 1fr);
+  gap: clamp(16px, 2vw, 24px);
+  width: min(100%, 1000px);
+  margin: 0 auto 80px;
+  align-items: start;
+}
+
+.home-contact,
+.about-me {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #1e1e1e;
+  border: 1px solid rgba(240, 248, 255, 0.596);
+  border-radius: 20px;
+}
+
+.home-contact {
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.home-photo {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #2f2f2f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+#dog_profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+}
+
+.home-contact-name {
+  width: auto;
+  margin: 0;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.home-contact-position-background {
+  width: min(100%, 240px);
+  padding: 8px 16px;
+  background: #2f2f2f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.home-contact-position {
+  margin: 0;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.line {
+  width: min(200px, 100%);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.305);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  width: min(220px, 100%);
+  color: rgba(255, 255, 255, 0.377);
+  font-size: 14px;
+}
+
+.contact-item {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  row-gap: 4px;
+}
+
+.contact-item .contact-icon {
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.377);
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+
+.contact-item > p:not(.myemail):not(.myphone):not(.mylocation) {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+
+.myemail,
+.myphone,
+.mylocation {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 2px 0 0;
+  color: white;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.about-me {
+  padding: clamp(20px, 3vw, 32px);
+}
+
+.thick-line {
+  width: 100px;
+  height: 5px;
+  margin: 30px 0;
+  background-color: rgba(255, 255, 255, 0.695);
+  border-radius: 50px;
+}
+
+.home-about h1,
+.doing h1,
+.home-skills h1 {
+  color: white;
+}
+
+.home-about p {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.695);
+}
+
+.doing h1 {
+  margin-top: 40px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.card {
+  padding: clamp(24px, 3vw, 40px);
+  color: white;
+  background: #2f2f2f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.home-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 0;
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.skill-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+}
+
+.typewriter-name {
+  color: var(--button-color, black);
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--button-color, black);
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: baseline;
+  animation: blink 1s infinite;
+}
+
+@media (max-width: 900px) {
+  .home-content-wrapper {
+    grid-template-columns: 1fr;
+    width: min(100%, 700px);
+    margin-bottom: 50px;
+  }
+
+  .home-contact {
+    width: min(100%, 420px);
+    margin-inline: auto;
+  }
+
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-contact {
+    padding: 32px 18px;
+  }
+
+  .about-me {
+    padding: 18px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .skill-icons {
+    gap: 12px;
+  }
+}

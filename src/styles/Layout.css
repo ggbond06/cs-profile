@@ -1,8 +1,15 @@
-body{
+body {
+  margin: 0;
   background-color: #161616;
 }
 
-#body{
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#body {
   min-height: 100vh;
   background: linear-gradient(
     var(--angle, 135deg),
@@ -19,9 +26,7 @@ body{
 }
 
 .page {
-  padding-top: 120px;
-  padding-left: 5%;
-  padding-right: 5%;
+  width: 100%;
   min-height: calc(100vh - 120px);
+  padding: 120px 5% 40px;
 }
-

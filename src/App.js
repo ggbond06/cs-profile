@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header.js";
 
-import Home from "./pages/Home.js";
-import Bio from "./pages/Bio.js";
+import Profile from "./pages/Profile.js";
 import Projects from "./pages/Project.js";
 import Experiences from "./pages/Experiences.js";
 import Resume from "./pages/Resume.js";
@@ -66,8 +65,8 @@ function App() {
       <div id="body">
         <Header/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/bio" element={<Bio />} />
+          <Route path="/" element={<Profile />} />
+          <Route path="/bio" element={<Profile />} />
           <Route path="/experiences" element={<Experiences />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />

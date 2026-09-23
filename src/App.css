@@ -1,11 +1,9 @@
-/* Import all CSS modules */
+/* Import shared styles before page-specific styles. */
 @import './styles/Animations.css';
 @import './styles/Layout.css';
 @import './styles/Header.css';
-@import './styles/Home.css';
+@import './styles/Profile.css';
 @import './styles/Footer.css';
 @import './styles/Resume.css';
 @import './styles/Experience.css';
-@import './styles/Bio.css';
 @import './styles/Courses.css';
-

@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import dogProfile from "../images/dog_profile.jpg";
 import { Mail, Phone, MapPin, Globe, Server, Search, BrainCog } from "lucide-react";
 
-export default function Home() {
-  const names = [           
+const NAMES = [           
     "你好，我是Michael",     
     "Hi, I am Michael",         
     "Olá, sou Michael",  
     "Grüezi, ich bin Michael",         
   ];
+
+export default function Profile() {
 
   const [displayedText, setDisplayedText] = useState("");
   const [currentNameIndex, setCurrentNameIndex] = useState(0);
@@ -44,7 +45,7 @@ export default function Home() {
   ];
 
   useEffect(() => {
-    const currentName = names[currentNameIndex];
+    const currentName = NAMES[currentNameIndex];
     
     let typingSpeed;
     if (!isDeleting && charIndex < currentName.length) {
@@ -76,12 +77,12 @@ export default function Home() {
       } else if (isDeleting && charIndex === 0) {
         // Finished deleting, move to next name
         setIsDeleting(false);
-        setCurrentNameIndex((prevIndex) => (prevIndex + 1) % names.length);
+        setCurrentNameIndex((prevIndex) => (prevIndex + 1) % NAMES.length);
       }
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, currentNameIndex, names]);
+  }, [charIndex, isDeleting, currentNameIndex, NAMES]);
 
   return (
     <div className="page home-page">
@@ -95,9 +96,9 @@ export default function Home() {
           <div className="home-photo">
             <img id="dog_profile" src={dogProfile} alt="My Photo"></img>
           </div>
-          <p className="home-contact-name">MIchael</p>
+          <p className="home-contact-name">Michael</p>
           <div className="home-contact-position-background">
-            <p className="home-contact-position">Undergraduate at UW-Madison</p>
+            <p className="home-contact-position">Undergraduate at University of Michigan</p>
           </div>
           <div className="line"></div>
           <div className="contacts">
@@ -114,7 +115,7 @@ export default function Home() {
             <div className="contact-item location">
             <MapPin className="contact-icon" />
               <p>Location</p>
-              <p className="mylocation">Madison, WI</p>
+              <p className="mylocation">Ann Arbor, MI</p>
             </div>
           </div>
         </div>
@@ -122,9 +123,8 @@ export default function Home() {
           <div className="home-about">
             <h1>About Me</h1>
             <div className="thick-line"></div>
-            <p>I'm a first year undergraduate student at University of Wisconsin-Madison.
-                I'm a member of UW-Madison Software Development Club and WebLabs. I am particularly 
-                interested in Machine Learning and other AI related fields.
+            <p>I'm a second year undergraduate student at the University of Michigan.
+               I am particularlyninterested in Machine Learning and other AI related fields.
             </p>
           </div>
           <div className="doing">
