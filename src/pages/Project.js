@@ -43,7 +43,7 @@ const PROJECTS = [
     image: "",
     technologies: ["Java", "React", "JavaScript", "CSS", "Dijkstra’s Algorithm", "HashMap"],
     githubUrl: "https://github.com/ggbond06/european-rail-webapp",
-    liveUrl: "https://european-rail-webapp-nvl07pef1-ggbond10.vercel.app/",
+    liveUrl: "https://european-rail-webapp.onrender.com/",
     featured: false,
   },
 ];
