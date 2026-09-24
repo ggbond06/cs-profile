@@ -1,0 +1,153 @@
+:root {
+  --button-color: #ffffff;
+  --background-black: #020204;
+  --wave-red: #ff1835;
+}
+
+body {
+  background: var(--background-black);
+}
+
+#body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(95, 0, 14, 0.22), transparent 38%),
+    var(--background-black);
+}
+
+#body::before,
+#body::after {
+  position: fixed;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+#body::before {
+  inset: -22vh -18vw;
+  transform-origin: center;
+  background:
+    radial-gradient(
+      ellipse 87% 17% at 35% 43%,
+      transparent 47%,
+      rgba(255, 89, 101, 0.08) 50%,
+      rgba(255, 42, 61, 0.72) 53%,
+      rgba(255, 0, 30, 0.24) 57%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 96% 16% at 67% 71%,
+      transparent 47%,
+      rgba(255, 112, 119, 0.06) 50%,
+      rgba(255, 38, 57, 0.65) 53%,
+      rgba(255, 0, 27, 0.2) 57%,
+      transparent 62%
+    ),
+    radial-gradient(
+      ellipse 95% 29% at 8% 27%,
+      transparent 45%,
+      rgba(75, 0, 10, 0.35) 49%,
+      rgba(220, 0, 27, 0.92) 55%,
+      rgba(255, 48, 66, 0.95) 57%,
+      rgba(102, 0, 14, 0.82) 64%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 92% 31% at 94% 44%,
+      transparent 43%,
+      rgba(72, 0, 10, 0.35) 48%,
+      rgba(235, 0, 30, 0.9) 55%,
+      rgba(255, 49, 67, 0.94) 57%,
+      rgba(88, 0, 13, 0.84) 65%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 120% 40% at 45% 79%,
+      transparent 42%,
+      rgba(58, 0, 9, 0.38) 48%,
+      rgba(218, 0, 28, 0.9) 55%,
+      rgba(255, 46, 65, 0.93) 58%,
+      rgba(91, 0, 13, 0.82) 66%,
+      transparent 73%
+    );
+  filter: blur(4px) saturate(1.28) contrast(1.08);
+  opacity: 0.98;
+  animation: red-wave-drift 18s ease-in-out infinite alternate;
+}
+
+#body::after {
+  inset: -12%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.95'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  opacity: 0.24;
+  animation: film-grain-shift 0.85s steps(6) infinite;
+}
+
+#body > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes red-wave-drift {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0) rotate(-1deg) scale(1.02);
+  }
+
+  50% {
+    transform: translate3d(1.5%, 1%, 0) rotate(0.5deg) scale(1.05);
+  }
+
+  100% {
+    transform: translate3d(-0.5%, 2%, 0) rotate(1deg) scale(1.03);
+  }
+}
+
+@keyframes film-grain-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(-2%, 1%, 0);
+  }
+
+  40% {
+    transform: translate3d(1%, -2%, 0);
+  }
+
+  60% {
+    transform: translate3d(2%, 2%, 0);
+  }
+
+  80% {
+    transform: translate3d(-1%, -1%, 0);
+  }
+
+  100% {
+    transform: translate3d(1%, 1%, 0);
+  }
+}
+
+@media (max-width: 700px) {
+  #body::before {
+    inset: -14vh -55vw;
+    opacity: 0.9;
+  }
+
+  #body::after {
+    inset: -18%;
+    opacity: 0.2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #body::before,
+  #body::after {
+    animation: none;
+  }
+}

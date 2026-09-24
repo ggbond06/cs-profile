@@ -9,7 +9,6 @@
 
 .home-page p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
 }
 
 .home-page > h2 {
@@ -31,9 +30,18 @@
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  background: #1e1e1e;
-  border: 1px solid rgba(240, 248, 255, 0.596);
-  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(22, 20, 24, 0.86),
+    rgba(7, 7, 10, 0.72)
+  );
+  border: 1px solid rgba(255, 78, 96, 0.2);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
 }
 
 .home-contact {
@@ -50,13 +58,14 @@
   align-items: center;
   justify-content: center;
   padding: 30px;
-  background: #2f2f2f;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 76, 94, 0.16);
   border-radius: 20px;
   box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 10px 28px rgba(0, 0, 0, 0.38),
+    0 0 30px rgba(255, 24, 53, 0.07),
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
 }
 
 #dog_profile {
@@ -64,14 +73,17 @@
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.7),
+    0 0 0 4px rgba(255, 40, 62, 0.1);
 }
 
 .home-contact-name {
   width: auto;
   margin: 0;
   color: white;
-  font-size: 2.0em;
+  font-size: 1.6em;
   font-weight: 500;
   text-align: center;
 }
@@ -79,13 +91,13 @@
 .home-contact-position-background {
   width: min(100%, 240px);
   padding: 8px 16px;
-  background: #2f2f2f;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   box-shadow:
     0 4px 20px rgba(0, 0, 0, 0.4),
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
 }
 
 .home-contact-position {
@@ -99,7 +111,12 @@
 .line {
   width: min(200px, 100%);
   height: 1px;
-  background: rgba(255, 255, 255, 0.305);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 71, 89, 0.6),
+    transparent
+  );
 }
 
 .contacts {
@@ -123,7 +140,7 @@
 .contact-item .contact-icon {
   width: 18px;
   height: 18px;
-  color: rgba(255, 255, 255, 0.377);
+  color: rgba(255, 91, 106, 0.88);
   grid-column: 1;
   grid-row: 1;
   align-self: center;
@@ -154,7 +171,8 @@
   width: 100px;
   height: 5px;
   margin: 30px 0;
-  background-color: rgba(255, 255, 255, 0.695);
+  background: linear-gradient(90deg, #ff243f, rgba(255, 36, 63, 0.18));
+  box-shadow: 0 0 18px rgba(255, 36, 63, 0.2);
   border-radius: 50px;
 }
 
@@ -184,13 +202,31 @@
 .card {
   padding: clamp(24px, 3vw, 40px);
   color: white;
-  background: #2f2f2f;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.025)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   box-shadow:
-    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 10px 28px rgba(0, 0, 0, 0.28),
     inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 69, 88, 0.28);
+}
+
+.card svg {
+  color: #ff5a6b;
 }
 
 .home-skills {

@@ -1,11 +1,298 @@
-.courses-box {
-    background: #1e1e1e;
-    color: white;
-    max-width: 900px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 20px;
-    padding: 18px 20px;
-    border: 1px solid rgba(240, 248, 255, 0.596);
+.courses-page {
+  width: min(100%, 1000px);
+  margin-inline: auto;
+  color: #fff;
 }
 
+.courses-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 42px;
+  padding-top: 30px;
+}
+
+.courses-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  color: #ff6477;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.courses-header h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.courses-header > div > p:last-child {
+  max-width: 580px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.7;
+}
+
+.courses-summary {
+  display: flex;
+  min-width: 190px;
+  padding: 18px 20px;
+  flex-direction: column;
+  background: linear-gradient(
+    145deg,
+    rgba(22, 20, 24, 0.86),
+    rgba(7, 7, 10, 0.72)
+  );
+  border: 1px solid rgba(255, 78, 96, 0.2);
+  border-radius: 18px;
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+}
+
+.courses-summary strong {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.courses-summary span {
+  margin-top: 7px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.75rem;
+}
+
+.semester-timeline {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding-left: 70px;
+}
+
+.semester-timeline::before {
+  position: absolute;
+  top: 31px;
+  bottom: 31px;
+  left: 25px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 70, 90, 0.15),
+    rgba(255, 70, 90, 0.75),
+    rgba(255, 70, 90, 0.15)
+  );
+  content: "";
+}
+
+.semester-entry {
+  position: relative;
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 25px;
+  left: -70px;
+  z-index: 2;
+  display: grid;
+  width: 50px;
+  height: 50px;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.72);
+  background: #111014;
+  border: 1px solid rgba(255, 78, 96, 0.35);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 7px rgba(3, 3, 5, 0.9),
+    0 0 24px rgba(255, 36, 63, 0.13);
+}
+
+.timeline-marker span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.semester-card {
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    rgba(22, 20, 24, 0.86),
+    rgba(7, 7, 10, 0.72)
+  );
+  border: 1px solid rgba(255, 78, 96, 0.2);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(1.1);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.semester-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 78, 96, 0.38);
+}
+
+.semester-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 25px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.semester-year {
+  margin: 0 0 5px;
+  color: #ff6477;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.semester-card h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+.semester-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 999px;
+}
+
+.semester-status i {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 50%;
+}
+
+.is-current .semester-status {
+  color: #ff9aa6;
+  border-color: rgba(255, 73, 94, 0.2);
+}
+
+.is-current .semester-status i {
+  background: #ff4058;
+  box-shadow: 0 0 0 4px rgba(255, 64, 88, 0.1);
+}
+
+.is-current .timeline-marker {
+  color: #fff;
+  border-color: rgba(255, 78, 96, 0.7);
+  box-shadow:
+    0 0 0 7px rgba(3, 3, 5, 0.9),
+    0 0 28px rgba(255, 36, 63, 0.25);
+}
+
+.semester-courses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 22px 28px 28px;
+}
+
+.course-row {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 16px;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 12px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.course-row:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 79, 99, 0.22);
+}
+
+.course-row svg {
+  flex: 0 0 auto;
+  color: #ff5a6b;
+}
+
+.course-row span {
+  overflow-wrap: anywhere;
+  font-size: 0.88rem;
+  font-weight: 550;
+}
+
+@media (max-width: 760px) {
+  .courses-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .courses-summary {
+    min-width: 0;
+  }
+
+  .semester-courses {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .courses-page {
+    padding-inline: 18px;
+  }
+
+  .semester-timeline {
+    padding-left: 42px;
+  }
+
+  .semester-timeline::before {
+    left: 14px;
+  }
+
+  .timeline-marker {
+    left: -42px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .timeline-marker span {
+    font-size: 0.58rem;
+  }
+
+  .semester-card-header {
+    align-items: flex-start;
+    padding: 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .semester-courses {
+    padding: 16px 20px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .semester-card,
+  .course-row {
+    transition: none;
+  }
+}

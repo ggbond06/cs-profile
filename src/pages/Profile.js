@@ -82,7 +82,7 @@ export default function Profile() {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, currentNameIndex, NAMES]);
+  }, [charIndex, isDeleting, currentNameIndex]);
 
   return (
     <div className="page home-page">
@@ -94,7 +94,7 @@ export default function Profile() {
       <div className="home-content-wrapper">
         <div className="home-contact">
           <div className="home-photo">
-            <img id="dog_profile" src={dogProfile} alt="My Photo"></img>
+            <img id="dog_profile" src={dogProfile} alt="Michael"></img>
           </div>
           <p className="home-contact-name">Michael</p>
           <div className="home-contact-position-background">

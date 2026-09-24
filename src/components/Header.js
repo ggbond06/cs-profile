@@ -20,8 +20,7 @@ export default function Header() {
       <Link to="/"><button id="name">Ruijia.portfolio</button></Link>
       <div id="menu_buttons">
         <Link to="/bio"><button>Bio</button></Link>
-        <Link to="/experiences"><button>Experiences</button></Link>
-        <Link to="/resume"><button>Resume</button></Link>
+        <Link to="/experiences"><button>Experience</button></Link>
         <Link to="/projects"><button>Projects</button></Link>
         <Link to="/courses"><button>Courses</button></Link>
       </div>

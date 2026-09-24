@@ -1,34 +1,90 @@
-import { Book } from "lucide-react";
+import { BriefcaseBusiness, GraduationCap, MapPin } from "lucide-react";
+import "../App.css";
 
-export default function Resume() {
+const TIMELINE = [
+  {
+    period: "Expected Graduation: 2029",
+    type: "Education",
+    title: "University of Michigan-Ann Arbor",
+    subtitle: "Bachelor of Science in Computer Science",
+    location: "Ann Arbor, Michigan",
+    icon: GraduationCap,
+    current: true,
+  },
+  {
+    period: "June 2024 — July 2024",
+    type: "Experience",
+    title: "Technical Intern",
+    subtitle: "Remote internship",
+    location: "Remote, Zurich",
+    icon: BriefcaseBusiness,
+    details: [
+      "Developed a web-scraping tool with Python, Selenium, and Beautiful Soup to extract data.",
+      "Automated data collection and exported structured CSV files, improving data accessibility for the team.",
+    ],
+  },
+];
+
+export default function Experiences() {
   return (
-    <div className="page">
-      <div className="experience-box">
-        <h1>Experiences</h1>
-        <div className="thick-line"></div>
-        <div className="experience-section">
-          <div className="experience-header">
-            <div className="resume-icon-box">
-              <Book size={24} color="#FFD86B" />
-            </div>
-            <h2>Experiences</h2>
-          </div>
-          <div className="vertical-line"></div>
-          <div className="dot-back2">
-            <div className="dot"></div> 
-          </div>
-          <div className="timeline-item">
-            <p className="internship">Technical Intern</p>
-            <p className="duration">June, 2024 - July 2024 • 1 month</p>
-            <p className="location">Remote, Zurich</p>
-            <li className="description">
-              Developed a web scraping tool using Python, Selenium, and BeautifulSoup to extract data.</li>
-            <li className="description">
-              Automated data collection and exported results into structured CSV files, improving data accessibility for the team.
-            </li>
-          </div>
-        </div>
-      </div>
-    </div>
+    <main className="page experience-page">
+      <section className="experience-intro">
+        <p className="experience-eyebrow">
+          <BriefcaseBusiness size={16} aria-hidden="true" />
+          Education & experience
+        </p>
+        <h1>My Journey</h1>
+        <p>
+          A chronological view of the education and practical experience that
+          continue to shape my work.
+        </p>
+      </section>
+
+      <section className="career-timeline" aria-label="Education and experience timeline">
+        {TIMELINE.map((entry, index) => {
+          const Icon = entry.icon;
+
+          return (
+            <article
+              className={`career-entry ${entry.current ? "is-current" : ""}`}
+              key={`${entry.period}-${entry.title}`}
+            >
+              <div className="career-marker" aria-hidden="true">
+                <span>{String(index + 1).padStart(2, "0")}</span>
+              </div>
+
+              <div className="career-card">
+                <header className="career-card-header">
+                  <div className="career-icon">
+                    <Icon size={22} aria-hidden="true" />
+                  </div>
+                  <div className="career-heading">
+                    <span className="career-type">{entry.type}</span>
+                    <h2>{entry.title}</h2>
+                    <p>{entry.subtitle}</p>
+                  </div>
+                  <time>{entry.period}</time>
+                </header>
+
+                <div className="career-card-body">
+                  <p className="career-location">
+                    <MapPin size={16} aria-hidden="true" />
+                    {entry.location}
+                  </p>
+
+                  {entry.details && (
+                    <ul className="career-details">
+                      {entry.details.map((detail) => (
+                        <li key={detail}>{detail}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </section>
+    </main>
   );
 }
