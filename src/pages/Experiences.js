@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, GraduationCap, MapPin } from "lucide-react";
+import { BriefcaseBusiness, GraduationCap, MapPin, FlaskConical } from "lucide-react";
 import "../App.css";
 
 const TIMELINE = [
@@ -12,6 +12,17 @@ const TIMELINE = [
     current: true,
   },
   {
+    period: "September 2026 - present",
+    type: "Research",
+    title: "Undergraduate Student Researcher",
+    subtitle: "Electrical and Computer Engineering at the Univesity of Michigan",
+    location: "On-site, Ann Arbor",
+    icon: FlaskConical,
+    details: [
+      "Conducting undergraduate research at the intersection of machine learning and semiconductor manufacturing, focused on automated analysis of reflection high-energy electron diffraction (RHEED) images during molecular beam epitaxy (MBE)."
+    ]
+  },
+  {
     period: "June 2024 — July 2024",
     type: "Experience",
     title: "Technical Intern",
@@ -19,8 +30,9 @@ const TIMELINE = [
     location: "Remote, Zurich",
     icon: BriefcaseBusiness,
     details: [
-      "Developed a web-scraping tool with Python, Selenium, and Beautiful Soup to extract data.",
-      "Automated data collection and exported structured CSV files, improving data accessibility for the team.",
+      "Built an automated web-scraping pipeline with Python, Selenium, and BeautifulSoup to collect and organize job-posting data.",
+      "Processed 500+ postings per job category and transformed raw results into clean, structured CSV datasets for team-wide analysis.",
+      "Implemented automated pagination and dynamic-content handling to repeatedly load additional job listings, enabling large-scale extraction from continuously loaded search results."
     ],
   },
 ];

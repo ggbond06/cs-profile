@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Globe, Server, Search, BrainCog } from "lucide-rea
 const NAMES = [           
     "你好，我是Michael",     
     "Hi, I am Michael",         
-    "Olá, sou Michael",  
+    "Olá, eu sou Michael",  
     "Grüezi, ich bin Michael",         
   ];
 
